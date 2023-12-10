@@ -1,0 +1,286 @@
+/* Reset de estilos para garantizar consistencia en diferentes navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: 'henny+penny', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ebe6ea;
+    transition: background-color 0.5s ease;
+}
+
+/* Estilos para la sección de inicio */
+#inicio {
+    background-color: #F8DFF3;
+    color: #FF1D02;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transiciones para cambios en el color de fondo y texto */
+}
+
+/* Estilos para el título H1 */
+h1 {
+    font-family: 'Ephesis', cursive;
+    color: deeppink;
+    font-size: 80px;
+    transition: color 0.5s ease; /* Transición para cambios en el color del título */
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #ffa8d9;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    transition: background-color 0.5s ease; /* Transición para cambios en el color de fondo del encabezado */
+}
+
+/* Estilos para el logotipo de la tienda con efecto */
+.logotipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    top: 250;
+    left: 250;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    transition: transform 5s ease;
+}
+
+.logotipo:hover {
+    transform: perspective(1000px) rotateX(20deg) rotateY(0deg);
+}
+
+/* Estilos para las imágenes con opción de compra */
+.imagen-con-compra {
+    transition: transform 0.2s;
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #ddd; /* Borde ligero alrededor de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que el borde redondeado afecte a la imagen */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+}
+
+.imagen-con-compra:hover {
+     transform: scale(1.05); /* Un poco de escala al pasar el ratón */
+    z-index: 2;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.contenedor-imagen {
+    width: 100%; /* La imagen ocupa el 100% del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+}
+
+/* Estilo del texto "Comprar" superpuesto */
+.comprar-overlay {
+   position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 29, 2, 0.9); /* Fondo semi-transparente */
+    padding: 8px 15px; /* Ajusta el relleno según sea necesario */
+    font-size: 16px;
+    color: #fff; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el texto */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+    opacity: 0; /* Inicialmente invisible */
+    pointer-events: none; /* Evita clics en elementos ocultos */
+}
+
+/* Mostrar el texto "Comprar" al pasar el ratón sobre la imagen */
+.imagen-con-compra:hover .comprar-overlay {
+    /*display: block;*/
+    opacity: 1; /* Hacer visible al pasar el ratón */
+    pointer-events: auto; /* Habilitar clics en el elemento visible */
+    /*background-color: #e62e75;*/
+}
+
+/* Estilo del texto "Precio" superpuesto */
+.precio-overlay {
+     position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 51, 133, 0.9); /* Fondo semi-transparente */
+    padding: 8px 15px; /* Ajusta el relleno según sea necesario */
+    font-size: 16px;
+    color: #fff; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el precio */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+    opacity: 0; /* Inicialmente invisible */
+    pointer-events: none; /* Evita clics en elementos ocultos */
+}
+
+/* Mostrar el texto "Precio" al pasar el ratón sobre la imagen */
+.imagen-con-compra:hover .precio-overlay {
+    opacity: 1; /* Hacer visible al pasar el ratón */
+    pointer-events: auto; /* Habilitar clics en el elemento visible */
+}
+
+/* Estilos para las secciones */
+section {
+    text-align: center;
+}
+
+/* Estilos para las opciones del menú de navegación */
+nav {
+    background-color: #ff3385;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Estilos responsivos para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    body {
+        font-size: 14px;
+        margin: 15px;
+        padding: 8px;
+    }
+
+    .whatsapp,
+    .facebook,
+    .instagram {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    nav ul {
+        font-size: 12px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    body {
+        font-size: 12px;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .whatsapp,
+    .facebook,
+    .instagram {
+        margin-right: 10px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: static;
+        background-color: #ff66b2;
+        box-shadow: none;
+    }
+}
+
+/* Estilos del menú desplegable */
+nav .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #ff66b2;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav a:hover {
+    background-color: #ff1d69;
+    color: #fff;
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+    background-color: #ffa8d9;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Estilos para los iconos de redes sociales */
+.whatsapp,
+.facebook,
+.instagram {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+/* Estilos para la sección de preguntas frecuentes */
+.preguntasfrecuentes {
+    color: #273a2d;
+    text-align: center;
+}
+
+/* Estilos para el pie de página */
+#copyright {
+    background-color: #ff3385;
+    color: #fff;
+    text-align: center;
+    padding: 0.5em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+nav a:hover {
+    text-decoration: none; /* Quita el subrayado al pasar el ratón */
+}

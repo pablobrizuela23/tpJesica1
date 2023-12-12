@@ -227,16 +227,21 @@ nav a {
 }
 
 /* Estilos del menú desplegable */
+nav ul{
+    height: : 40px; /* Ajusta el valor según sea necesario */
+}
 nav .dropdown-content {
     display: none;
-    position: relative;
+    position: absolute;/* Cambiado a 'absolute' para que no afecte el flujo de los demás elementos */
     background-color: #ff66b2;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
+    top: 40px;/* Ajusta el valor según sea necesario */
 }
 
 nav .dropdown:hover .dropdown-content {
     display: block;
+    
 }
 
 nav a:hover {
